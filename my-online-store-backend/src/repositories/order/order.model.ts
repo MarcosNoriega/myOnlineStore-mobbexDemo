@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-const UserSchema = new Schema({
+const OrderSchema = new Schema({
     "type": {
       "type": "String"
     },
@@ -142,9 +142,9 @@ const UserSchema = new Schema({
     }
 });
 
-const User = model('User', UserSchema);
+const OrderModel = model('Order', OrderSchema);
 
-export default User;
+export default OrderModel;
 
 
  

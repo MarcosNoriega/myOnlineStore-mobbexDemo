@@ -1,8 +1,8 @@
 export default class OrderRepository {
-    constructor(private Order: any) {}
+    constructor(private OrderModel: any) {}
 
     public async createOrder(dataOrder: object) {
-        const order = this.Order(dataOrder);
+        const order = this.OrderModel(dataOrder);
 
         await order.save();
     }

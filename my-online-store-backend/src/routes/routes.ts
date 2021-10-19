@@ -10,7 +10,6 @@ router.post('/checkout', async (req: Request, res: Response) => {
 });
 
 router.post('/webhook', async (req: Request, res: Response) => {
-    console.log("*****************************************webhook*********************************************************")
     await container.resolve('Order').createOrder(req, res)
 });
 
@@ -19,4 +18,14 @@ router.get('/return_url', async (req: Request, res: Response) => {
 
     res.send("Pago realizado con exito");
 })
+
+router.post('/insert_products', async (req: Request, res: Response) => {
+     await container.resolve('Product').insert(req, res);
+});
+
+router.get('/products', async (req: Request, res: Response) => {
+    await container.resolve('Product').getAll(req, res);
+});
+
+
 
