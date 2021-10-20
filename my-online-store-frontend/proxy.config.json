@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://api.mobbex.com",
+        "secure": false,
+        "loglevel": "debug"
+    }
+}
