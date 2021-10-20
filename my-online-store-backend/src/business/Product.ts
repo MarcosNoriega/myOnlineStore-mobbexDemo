@@ -21,4 +21,12 @@ export default class Product {
         res.json(products);
     }
 
+    async getById(req: Request, res: Response) {
+        const { idProduct } = req.params;
+
+        const product = await this.productRepository.getById(idProduct);
+
+        res.json(product);
+    }
+
 }
