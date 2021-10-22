@@ -4,8 +4,7 @@ import { MyOnlineStoreService } from 'src/app/service/myOnlineStore.service';
 
 @Component({
   selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  templateUrl: './shop.component.html'
 })
 export class ShopComponent implements OnInit {
 

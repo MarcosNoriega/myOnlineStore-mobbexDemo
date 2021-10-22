@@ -6,8 +6,6 @@ export interface OrderData {
     reference: string;
     currency: string;
     test: boolean;
-    return_url: string;
-    webhook: string;
     customer: Customer;
     items: Product[];
 }

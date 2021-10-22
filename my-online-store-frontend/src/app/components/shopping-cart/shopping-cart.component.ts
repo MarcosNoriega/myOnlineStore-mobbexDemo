@@ -7,8 +7,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-shopping-cart',
-  templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  templateUrl: './shopping-cart.component.html'
 })
 export class ShoppingCartComponent implements OnInit {
 
@@ -52,8 +51,6 @@ export class ShoppingCartComponent implements OnInit {
       reference: Date.now().toString(),
       currency: environment.currency,
       test: true,
-      return_url: environment.return_url,
-      webhook: environment.webhook,
       customer: environment.customer
     };
   }
