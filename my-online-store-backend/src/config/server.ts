@@ -1,14 +1,18 @@
 import express from 'express';
 import cors from 'cors';
 import { router } from '../routes/routes';
+import Mongo from '../repositories/db/mongoDB.connection';
 import DBConnectionFactory from '../repositories/db/dbConnectionFactory';
 
-const urlMongo = process.env.URL_MONGO || "";
-const portMongo = process.env.PORT_MONGO  || "";
-const dbName = process.env.DB_MONGO || ""; 
+const urlDatabase = process.env.URL_DATABASE || "";
+const portDatabase = process.env.PORT_DATABASE  || "";
+const dbName = process.env.DB_NAME || ""; 
+const database = process.env.DATABASE || "";
 
-const mongo = DBConnectionFactory.get("Mongo");
-mongo.connect(urlMongo, portMongo, dbName);
+const databaseConnect = DBConnectionFactory.get(database);
+(async () => {
+    const db = await databaseConnect.connect(urlDatabase, portDatabase, dbName);  
+})();
 
 export const app = express();
 app.set('port', process.env.process || 3000);
