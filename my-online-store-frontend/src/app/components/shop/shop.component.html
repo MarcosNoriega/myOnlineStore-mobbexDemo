@@ -1,0 +1,13 @@
+<div class="row mt-4">
+  <div class="col-md-9">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let product of products">
+        <app-product-card [product]="product" (productToCard)="addToCard($event)"></app-product-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <app-shopping-cart></app-shopping-cart>
+  </div>
+</div>

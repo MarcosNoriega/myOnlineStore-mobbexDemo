@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <p class="lead">Detalle del Pedido</p>
+    <hr class="my-2">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action" *ngFor="let product of productsIntoCard">
+        <div class="row">
+          <div class="col">
+            {{ product.quantity }}
+            {{ product.name }} 
+          </div>
+          <div class="col">
+            {{ product.total | currency  }}
+            <a (click)="deleteProductToCard(product)"><i class="fas fa-trash-alt"></i></a>
+          </div>
+        </div>  
+      </a>
+      <a href="#" class="list-group-item list-group-item-action" *ngIf="total != 0">Total: {{ total  | currency }}</a>
+    </div>
+    <p class="lead">
+      <button class="btn btn-primary btn-lg mt-4" role="button" (click)="processOrder()" [disabled]="total == 0">Realizar la compra</button>
+    </p>
+  </div>

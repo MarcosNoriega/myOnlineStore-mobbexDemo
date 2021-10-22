@@ -4,10 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { NavbarsComponent } from './components/navbars/navbars.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShopComponent,
+    ProductCardComponent,
+    ShoppingCartComponent,
+    NavbarsComponent
   ],
   imports: [
     BrowserModule,
