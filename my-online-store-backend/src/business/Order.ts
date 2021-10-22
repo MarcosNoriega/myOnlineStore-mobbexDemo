@@ -1,14 +1,16 @@
 import Payment from '../payment/Payment.interface';
 import { Request, Response} from 'express';
 import OrderRepository from '../repositories/order/order.repository';
+import OrderDto from '../services/OrderDto';
 
 class Order {
     constructor(private payment: Payment, private orderRepository: OrderRepository) {}
 
     async checkout(req: Request, res: Response) {
-        const data = req.body;
-    
-        const responseMobbex = await this.payment.checkout(data);
+        const dataOrder = req.body;
+        const orderDto = new OrderDto(dataOrder);
+
+        const responseMobbex = await this.payment.checkout(orderDto);
     
         return res.json(responseMobbex);
     }
