@@ -8,7 +8,13 @@ class Order {
 
     async checkout(req: Request, res: Response) {
         const dataOrder = req.body;
+
+        // set url return and webhook
+        dataOrder.webhook = process.env.WEBHOOK;
+        dataOrder.return_url = process.env.RETURN_URL;
+
         const orderDto = new OrderDto(dataOrder);
+
 
         const responseMobbex = await this.payment.checkout(orderDto);
     
