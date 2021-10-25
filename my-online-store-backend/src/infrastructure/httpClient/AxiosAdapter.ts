@@ -1,4 +1,4 @@
-import HttpClient from './HttpClient.interface';
+import HttpClient from '../../interfaces/HttpClient.interface';
 import axios from 'axios';
 
 class AxiosAdapter implements HttpClient {

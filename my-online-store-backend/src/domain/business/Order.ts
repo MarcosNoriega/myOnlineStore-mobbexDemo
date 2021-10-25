@@ -1,6 +1,6 @@
-import PaymentService from '../payment/Payment.interface';
+import PaymentService from '../../interfaces/Payment.interface';
 import { Request, Response} from 'express';
-import OrderRepository from '../repositories/order/order.repository';
+import OrderRepository from '../../infrastructure/repositories/db/Mongo/order/order.repository';
 import OrderDto from '../services/OrderDto';
 import PaymentDto from '../services/PaymentDto';
 

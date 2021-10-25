@@ -1,4 +1,4 @@
-import ProductRepository from '../../repositories/product/product.repository';
+import ProductRepository from '../../infrastructure/repositories/db/Mongo/product/product.repository';
 
 
 describe('', () => {

@@ -1,5 +1,5 @@
-import MobbexPayment from '../../payment/Mobbex';
-import HttpClient from '../../services/HttpClient.interface';
+import MobbexPayment from '../../infrastructure/payment/Mobbex';
+import HttpClient from '../../interfaces/HttpClient.interface';
 
 class HttpMock implements HttpClient {
     post = jest.fn((url: string, data: object, headers: object) => {

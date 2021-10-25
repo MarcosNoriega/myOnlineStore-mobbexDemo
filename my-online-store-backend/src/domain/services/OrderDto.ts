@@ -1,4 +1,4 @@
-import { Customer, Item, OrderData } from "../interfaces/order.interface";
+import { Customer, Item, OrderData } from "../../interfaces/order.interface";
 
 export default class OrderDto {
     total: string;

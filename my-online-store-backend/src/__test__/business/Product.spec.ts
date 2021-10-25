@@ -1,4 +1,4 @@
-import Product from '../../business/Product';
+import Product from '../../domain/business/Product';
 import { response, request } from 'express';
 
 describe('Product business', () => {

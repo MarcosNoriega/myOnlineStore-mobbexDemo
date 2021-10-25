@@ -1,5 +1,5 @@
-import DbConnection from './dbConnection.interface';
-import Mongo from './mongoDB.connection';
+import DbConnection from '../../../interfaces/dbConnection.interface';
+import Mongo from './Mongo/mongoDB.connection';
 
 export default class DBConnectionFactory {
     public static get(db: string): DbConnection {

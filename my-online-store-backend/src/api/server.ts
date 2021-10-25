@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import { router } from '../routes/routes';
-import Mongo from '../repositories/db/mongoDB.connection';
-import DBConnectionFactory from '../repositories/db/dbConnectionFactory';
+import { router } from './routes/routes';
+import Mongo from '../infrastructure/repositories/db/Mongo/mongoDB.connection';
+import DBConnectionFactory from '../infrastructure/repositories/db/dbConnectionFactory';
 
 const urlDatabase = process.env.URL_DATABASE || "";
 const portDatabase = process.env.PORT_DATABASE  || "";

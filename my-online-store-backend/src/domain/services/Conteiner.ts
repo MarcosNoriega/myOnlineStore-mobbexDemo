@@ -1,14 +1,14 @@
 const  awilix  =  require ( 'awilix' ) 
-import MobbexPayment from '../payment/Mobbex';
-import AxiosAdapter from './AxiosAdapter';
+import MobbexPayment from '../../infrastructure/payment/Mobbex';
+import AxiosAdapter from '../../infrastructure/httpClient/AxiosAdapter';
 import Order from '../business/Order';
-import OrderRepository from '../repositories/order/order.repository';
-import OrderModel from '../repositories/order/order.model';
+import OrderRepository from '../../infrastructure/repositories/db/Mongo/order/order.repository';
+import OrderModel from '../../infrastructure/repositories/db/Mongo/order/order.model';
 import Product from '../business/Product';
-import ProductRepository from '../repositories/product/product.repository';
-import ProductModel from '../repositories/product/product.model';
-import PaymentRepository from '../repositories/Payment/payment.repository';
-import PaymentModel from '../repositories/Payment/payment.model';
+import ProductRepository from '../../infrastructure/repositories/db/Mongo/product/product.repository';
+import ProductModel from '../../infrastructure/repositories/db/Mongo/product/product.model';
+import PaymentRepository from '../../infrastructure/repositories/db/Mongo/Payment/payment.repository';
+import PaymentModel from '../../infrastructure/repositories/db/Mongo/Payment/payment.model';
 import Payment from '../business/Payment';
 
 // Create the container and set the injectionMode to PROXY (which is also the default).

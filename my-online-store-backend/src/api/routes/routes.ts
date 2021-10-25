@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Request, Response} from 'express';
-import container from '../services/Conteiner';
+import container from '../../domain/services/Conteiner';
 
 
 export const router: Router = Router();

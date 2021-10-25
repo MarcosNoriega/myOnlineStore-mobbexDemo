@@ -1,4 +1,4 @@
-import OrderRepository from '../../repositories/order/order.repository';
+import OrderRepository from '../../infrastructure/repositories/db/Mongo/order/order.repository';
 
 
 describe('', () => {

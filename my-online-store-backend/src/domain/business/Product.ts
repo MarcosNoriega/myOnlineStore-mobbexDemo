@@ -1,5 +1,5 @@
 import { Request, Response} from 'express';
-import ProductRepository from '../repositories/product/product.repository';
+import ProductRepository from '../../infrastructure/repositories/db/Mongo/product/product.repository';
 
 
 export default class Product {

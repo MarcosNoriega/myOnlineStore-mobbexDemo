@@ -1,5 +1,5 @@
 import { response, request } from 'express';
-import Payment from '../../business/Payment';
+import Payment from '../../domain/business/Payment';
 
 describe('', () => {
     let PaymentRepository: jest.Mock<any, any>;

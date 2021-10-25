@@ -1,5 +1,5 @@
-import HttpClient from '../services/HttpClient.interface';
-import Payment from './Payment.interface';
+import HttpClient from '../../interfaces/HttpClient.interface';
+import Payment from '../../interfaces/Payment.interface';
 
 class MobbexPayment implements Payment {
     constructor(private http: HttpClient) {}

@@ -1,5 +1,5 @@
 import { Request, Response} from 'express';
-import PaymentRepository from '../repositories/Payment/payment.repository';
+import PaymentRepository from '../../infrastructure/repositories/db/Mongo/Payment/payment.repository';
 import PaymentDto from '../services/PaymentDto';
 
 export default class Payment {
