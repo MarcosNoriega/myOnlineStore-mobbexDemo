@@ -10,6 +10,7 @@ import ProductModel from '../../infrastructure/repositories/db/Mongo/product/pro
 import PaymentRepository from '../../infrastructure/repositories/db/Mongo/Payment/payment.repository';
 import PaymentModel from '../../infrastructure/repositories/db/Mongo/Payment/payment.model';
 import Payment from '../business/Payment';
+import UuidAdapter from '../../infrastructure/IdGenerator/uuidAdapter';
 
 // Create the container and set the injectionMode to PROXY (which is also the default).
 const container = awilix.createContainer({
@@ -27,7 +28,8 @@ container.register({
     'ProductModel': awilix.asValue(ProductModel),
     'Payment': awilix.asClass(Payment),
     'PaymentModel': awilix.asValue(PaymentModel),
-    'paymentRepository': awilix.asClass(PaymentRepository)
+    'paymentRepository': awilix.asClass(PaymentRepository),
+    'idGenerator': awilix.asClass(UuidAdapter)
 })
 
 export default container;

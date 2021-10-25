@@ -2,10 +2,10 @@ import PaymentService from '../../interfaces/Payment.interface';
 import { Request, Response} from 'express';
 import OrderRepository from '../../infrastructure/repositories/db/Mongo/order/order.repository';
 import OrderDto from '../services/OrderDto';
-import PaymentDto from '../services/PaymentDto';
+import IdGenerator from '../../interfaces/IdGenerator.interface';
 
 class Order {
-    constructor(private paymentService: PaymentService, private orderRepository: OrderRepository) {}
+    constructor(private paymentService: PaymentService, private orderRepository: OrderRepository, private idGenerator: IdGenerator) {}
 
     async checkout(req: Request, res: Response) {
         try {
@@ -15,6 +15,9 @@ class Order {
             dataOrder.webhook = process.env.WEBHOOK;
             dataOrder.return_url = process.env.RETURN_URL;
 
+            // create a id for reference property
+            dataOrder.reference = this.idGenerator.generateId();
+
             const orderDto = new OrderDto(dataOrder);
 
             const responseMobbex = await this.paymentService.checkout(orderDto);
@@ -23,6 +26,7 @@ class Order {
     
             return res.json(responseMobbex);
         } catch (error) {
+            console.error(error)
             res.status(500).send('an unexpected error ocurred')
         } 
     }

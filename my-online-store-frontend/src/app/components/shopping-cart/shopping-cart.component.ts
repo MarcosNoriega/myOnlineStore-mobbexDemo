@@ -48,7 +48,6 @@ export class ShoppingCartComponent implements OnInit {
       total: this.total.toString(),
       items: this.productsIntoCard,
       description: 'Checkout de Prueba',
-      reference: Date.now().toString(),
       currency: environment.currency,
       test: true,
       customer: environment.customer
