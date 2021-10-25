@@ -10,12 +10,13 @@ router.post('/checkout', async (req: Request, res: Response) => {
 });
 
 router.post('/webhook', async (req: Request, res: Response) => {
-    await container.resolve('Order').createOrder(req, res)
+    const payment = await container.resolve('Payment').create(req, res);
+    const { data: { payment: { reference, status: { text } } }  } = payment;
+
+    await container.resolve('Order').updateStatus(reference, text);
 });
 
 router.get('/return_url', async (req: Request, res: Response) => {
-    console.log(req.params);
-
     res.send("Pago realizado con exito");
 })
 
@@ -26,6 +27,8 @@ router.post('/insert_products', async (req: Request, res: Response) => {
 router.get('/products', async (req: Request, res: Response) => {
     await container.resolve('Product').getAll(req, res);
 });
+
+
 
 
 
