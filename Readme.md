@@ -1,7 +1,10 @@
 # My Online Store (Mobbex Demo)
 
-Este proyecto en un micro sistema de pedidos con pago online utilizando los servicios de mobbex como demostracion. 
-El mismo se divide en dos, backend y frontend.
+Este proyecto en un micro sistema de pedidos con pago online utilizando los servicios de mobbex como demostración. El mismo se divide en dos subprojetos, backend y frontend.
+
+El backend esta desarrollado con el lenguaje typescript, utilizando el framework express y enfocado en una arquitectura por capas.
+
+El frontend se encuentra desarrollado por el framework angular.
 
 ## Comenzando 🚀
 
@@ -9,10 +12,15 @@ _Estas instrucciones te permitirán levantar proyecto en funcionamiento en tu m�
 
 ### Pre-requisitos 📋
 
-Previamente se deberá instalar Node, MongoDB, Typescript, 
+Previamente se deberá instalar Node, MongoDB, Typescript y ng CLI
 
+para instalar typescript:
 ```
-npm i typescript
+npm i -g typescript
+```
+para instalar ng CLI
+```
+npm install -g @angular/cli
 ```
 
 ### Instalación 🔧
@@ -22,7 +30,7 @@ Para instalar el proyecto se deberá instalar las dependencias de cada subproyec
 ```
 npm install
 ```
-a continuacion se debera configurar las variables de entorno de desarrollo creando un archivo ```.env``` y setearlas siguiendo el ejemplo de acontinuacion. 
+a continuación se debera configurar las variables de entorno de desarrollo, creando un archivo ```.env``` y setearlas siguiendo el siguente ejemplo. 
 
 ```
 URL_CHECKOUT=myUrlCheckout
@@ -45,9 +53,16 @@ Cabe aclarar que las variables entorno ```RETURN_URL``` y ```WEBHOOK``` son las 
 
 ```WEBHOOK```: Es la ruta en la cual mobbex va a enviar la informacion sobre el pago.
 
-Además en el ejemplo se esta apuntando a localhost pero para poder probar en local deberemos utilizar una herramienta llamada ngrok y la misma nos permiten exponer en internet una URL local.
+Además en el ejemplo se esta apuntando a localhost pero para poder probar en local deberemos utilizar una herramienta llamada ngrok o TunnelTo, la cual nos permiten exponer en internet una URL local. 
 
-Por otro lado se debera configurando el archivo ```environment.ts```de la siguente manera.
+En mi caso use ngrok y se podran registrar con el siguiente link 
+
+https://ngrok.com/
+
+Por limitaciones de ngrok, en la Api de backend esta configurada una endpoint que permite retornar el pago y simplemente envia un mesaje de finalizacion del mismo, pero la idea es retornar hacia el frontend.
+
+
+Por otro lado se debera configurando el archivo ```environment.ts``` de la siguente manera.
 
 ```typescript
 export const environment = {
@@ -67,9 +82,10 @@ _Y luego para levantar en local cada cada uno de los subprojectos con el siguien
 ```
 npm start
 ```
-_Para el backend tambien se encuentra disponible el siguiente comando para levantar en local por medio de nodemon_
+_Para el backend tambien se encuentra disponible el siguiente comando para levantar en local por medio de nodemon pero se debera instalar las dependencias de desarrollo_
 
 ```
+npm install -D
 npm run dev
 ```
 
