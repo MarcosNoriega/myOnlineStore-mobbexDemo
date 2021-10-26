@@ -5,13 +5,16 @@ import PaymentDto from '../services/PaymentDto';
 export default class Payment {
     constructor(private paymentRepository: PaymentRepository) {}
 
+    /**
+     * Create a payment in the database.
+     */
     async create(req: Request, res: Response) {
         try {
             const dataOrder = req.body;
 
-            const dataOrderMap = new PaymentDto(dataOrder);
+            const dataPaymentDto = new PaymentDto(dataOrder);
 
-            const payment = await this.paymentRepository.create(dataOrderMap);
+            const payment = await this.paymentRepository.create(dataPaymentDto);
 
             return payment;
         } catch (error) {
