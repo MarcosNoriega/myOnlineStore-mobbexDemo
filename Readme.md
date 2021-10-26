@@ -25,12 +25,12 @@ npm install -g @angular/cli
 
 ### Instalación 🔧
 
-Para instalar el proyecto se deberá instalar las dependencias de cada subproyecto, tanto para el backend como para el frontend
+Para instalar el proyecto se deberá instalar las dependencias de cada subproyecto tanto para el backend como para el frontend
 
 ```
 npm install
 ```
-a continuación se debera configurar las variables de entorno de desarrollo, creando un archivo ```.env``` y setearlas siguiendo el siguente ejemplo. 
+a continuación se debera configurar las variables de entorno de desarrollo, para el projecto de backed creando un archivo ```.env``` en la carpeta ```my-online-store-backend``` y setearlas siguiendo el siguente ejemplo. 
 
 ```
 URL_CHECKOUT=myUrlCheckout
@@ -62,7 +62,7 @@ https://ngrok.com/
 Por limitaciones de ngrok, en la Api de backend esta configurada una endpoint que permite retornar el pago y simplemente envia un mesaje de finalizacion del mismo, pero la idea es retornar hacia el frontend.
 
 
-Por otro lado se debera configurando el archivo ```environment.ts``` de la siguente manera.
+Por otro lado se debera configurando el archivo ```environment.ts``` que se encuentra en ```my-online-store-frontend/src/environments``` de la siguente manera.
 
 ```typescript
 export const environment = {
