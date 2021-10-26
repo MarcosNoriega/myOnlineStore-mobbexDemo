@@ -7,6 +7,9 @@ import IdGenerator from '../../interfaces/IdGenerator.interface';
 class Order {
     constructor(private paymentService: PaymentService, private orderRepository: OrderRepository, private idGenerator: IdGenerator) {}
 
+    /** 
+    * Generates a checkout and creates an order in the database. 
+    */
     async checkout(req: Request, res: Response) {
         try {
             const dataOrder = req.body;
@@ -31,6 +34,9 @@ class Order {
         } 
     }
 
+    /**
+     * update a order
+     */
     async update(req: Request, res: Response) {
         try {
             const { id } = req.params;
@@ -42,9 +48,30 @@ class Order {
         }
     }
 
-    async updateStatus(reference: string, status: string) {
+    /**
+    * Update order status according to transaction status.
+    */
+    async updateStatus(reference: string, statusTransaction: string) {
         try {
-            await this.orderRepository.updateStatusByReference(reference, status)
+            let statusSelected;
+            switch (statusTransaction) {
+                case "En Espera":
+                    statusSelected = "Pendiente de Pago"
+                    break;
+                
+                case "Aprobado":
+                    statusSelected = "Pagado";
+                    break;
+            
+                case "Rechazado":
+                    statusSelected = "Pendiente de Pago"
+                    break;
+                default:
+                    statusSelected = "Nuevo"
+                    break;
+            }
+
+            await this.orderRepository.updateStatusByReference(reference, statusSelected)
         } catch (error) {
             console.error(error);
         }

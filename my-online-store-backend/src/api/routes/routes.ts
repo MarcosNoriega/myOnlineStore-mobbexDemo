@@ -14,10 +14,12 @@ router.post('/webhook', async (req: Request, res: Response) => {
     const { data: { payment: { reference, status: { text } } }  } = payment;
 
     await container.resolve('Order').updateStatus(reference, text);
+
+    res.status(200);
 });
 
 router.get('/return_url', async (req: Request, res: Response) => {
-    res.send("Pago realizado con exito");
+    res.send("Pago Finalizado");
 })
 
 router.post('/insert_products', async (req: Request, res: Response) => {
