@@ -3,7 +3,6 @@ import { MyOnlineStoreService } from '../../service/myOnlineStore.service';
 import { OrderData, Customer } from '../../Interfaces/OrderData.Interface';
 import Product from 'src/app/Interfaces/Product.Interface';
 import { environment } from 'src/environments/environment';
-import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-shopping-cart',
